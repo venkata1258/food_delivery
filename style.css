@@ -1,0 +1,196 @@
+/* General Reset and Styling */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+  body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(135deg, #f5f7fa, #c3cfe2); /* Soft gradient background */
+    color: #333;
+    padding: 0 10px;
+    line-height: 1.6;
+  }
+  
+  /* Header */
+  header {
+    text-align: center; /* Center-align header */
+    background: #4CAF50; /* Green background */
+    color: white;
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+  }
+  
+  header h1 {
+    font-size: 2.5rem;
+  }
+  
+  /* Main Section */
+  main {
+    margin: 20px auto;
+    max-width: 900px;
+  }
+  
+  /* Menu Section */
+  #menu {
+    margin-bottom: 30px;
+  }
+  
+  #menu h2 {
+    font-size: 2rem;
+    color: #4CAF50; /* Same green as header */
+    margin-bottom: 15px;
+  }
+  
+  .menu-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+  }
+  
+  .menu-item {
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+  
+  .menu-item:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+  }
+  
+  .menu-item:nth-child(1) {
+    background: #FFD700; /* Gold for first item */
+  }
+  
+  .menu-item:nth-child(2) {
+    background: #FFA07A; /* Light Salmon */
+  }
+  
+  .menu-item:nth-child(3) {
+    background: #87CEFA; /* Light Blue */
+  }
+  
+  .menu-item img {
+    width: 100%;
+    border-radius: 10px 10px 0 0;
+  }
+  
+  .menu-details {
+    padding: 15px;
+    text-align: center;
+  }
+  
+  .menu-details h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+  }
+  
+  .menu-details button {
+    background: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+  }
+  
+  .menu-details button:hover {
+    background: #45a049;
+  }
+  
+  /* Cart Section */
+  #cart {
+    background: white;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+  }
+  
+  #cart h2 {
+    color: #4CAF50;
+    margin-bottom: 15px;
+  }
+  
+  #cart-items {
+    margin-bottom: 15px;
+  }
+  
+  #total-price {
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+    color: #333;
+  }
+  
+  #cart button {
+    background: #FF4500; /* Orange-red */
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  #cart button:hover {
+    background: #E63900;
+  }
+  
+  /* Checkout Section */
+  #checkout-form {
+    background: white;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    display: none; /* Initially hidden */
+  }
+  
+  #checkout-form h2 {
+    color: #4CAF50;
+    margin-bottom: 15px;
+  }
+  
+  #checkout-form form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  #checkout-form form label {
+    margin-top: 10px;
+  }
+  
+  #checkout-form form input {
+    padding: 10px;
+    margin-top: 5px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+  }
+  
+  #checkout-form form button {
+    background: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 15px;
+    margin-top: 15px;
+    cursor: pointer;
+  }
+  
+  #checkout-form form button:hover {
+    background: #45a049;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 600px) {
+    header h1 {
+      font-size: 1.8rem;
+    }
+  
+    .menu-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+  
