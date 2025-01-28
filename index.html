@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign In with Phone Number</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h2>Sign In</h2>
+        <form id="signInForm">
+            <div class="input-group">
+                <label for="phone">Phone Number:</label>
+                <input type="text" id="phone" placeholder="Enter your phone number" required>
+            </div>
+            <button type="button" id="sendOtpBtn">Send OTP</button>
+            <div class="input-group" id="otpGroup" style="display: none;">
+                <label for="otp">Enter OTP:</label>
+                <input type="text" id="otp" placeholder="Enter the OTP" required>
+            </div>
+            <button type="submit" id="verifyOtpBtn" style="display: none;">Verify OTP</button>
+        </form>
+        <div id="message"></div>
+
+        <!-- Menu Display Section -->
+        <div class="menu" style="display: none;">
+            <h2>Menu</h2>
+
+            <!-- Pizza Section -->
+            <div class="menu-category">
+                <h3 onclick="toggleSubMenu('pizzaSubMenu')">Pizza</h3>
+                <ul class="sub-menu" id="pizzaSubMenu">
+                    <li class="menu-item">
+                        <span class="item-name">Cheese Pizza - $140</span>
+                        <img src="cheese pizza.jpg" alt="Cheese Pizza">
+                        <button class="add-to-cart" onclick="addToCart('Cheese Pizza', 140)">Add to Cart</button>
+                    </li>
+                    <li class="menu-item">
+                        <span class="item-name">Paneer Pizza - $170</span>
+                        <img src="paneer pizza.jpg" alt="Paneer Pizza">
+                        <button class="add-to-cart" onclick="addToCart('Paneer Pizza', 170)">Add to Cart</button>
+                    </li>
+                    <li class="menu-item">
+                        <span class="item-name">Chicken Pizza - $200</span>
+                        <img src="chicken pizza.jpg" alt="Chicken Pizza">
+                        <button class="add-to-cart" onclick="addToCart('Chicken Pizza', 200)">Add to Cart</button>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Burger Section -->
+            <div class="menu-category">
+                <h3 onclick="toggleSubMenu('burgerSubMenu')">Burger</h3>
+                <ul class="sub-menu" id="burgerSubMenu">
+                    <li class="menu-item">
+                        <span class="item-name">Cheese Burger - $80</span>
+                        <img src='cheese burger.jpg' alt='Cheese Burger'>
+                        <button class="add-to-cart" onclick='addToCart("Cheese Burger", 80)'>Add to Cart</button>
+                    </li>
+                    <li class="menu-item">
+                        <span class="item-name">Paneer Burger - $100</span>
+                        <img src='paneer burger.jpg' alt='Paneer Burger'>
+                        <button class="add-to-cart" onclick='addToCart("Paneer Burger", 100)'>Add to Cart</button>
+                    </li>
+                    <li class="menu-item">
+                        <span class="item-name">Chicken Burger - $120</span>
+                        <img src='chicken burger.jpg' alt='Chicken Burger'>
+                        <button class="add-to-cart" onclick='addToCart("Chicken Burger", 120)'>Add to Cart</button>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Ice Cream Section -->
+            <div class="menu-category">
+                <h3 onclick='toggleSubMenu("iceCreamSubMenu")'>Ice Cream</h3>
+                <ul class='sub-menu' id='iceCreamSubMenu'>
+                    <li class="menu-item">
+                        <span class="item-name">Vanilla Ice Cream - $50</span>
+                        <img src='vanilla icecream.jpg' alt='Vanilla Ice Cream'>
+                        <button class="add-to-cart" onclick='addToCart("Vanilla Ice Cream", 50)'>Add to Cart</button>
+                    </li>
+                    <li class="menu-item">
+                        <span class="item-name">Blackcurrant Ice Cream - $100</span>
+                        <img src='black currant icecream.jpg' alt='Blackcurrant Ice Cream'>
+                        <button class="add-to-cart" onclick='addToCart("Blackcurrant Ice Cream", 100)'>Add to Cart</button>
+                    </li>
+                    <li class="menu-item">
+                        <span class="item-name">Strawberry Ice Cream - $80</span>
+                        <img src='strawberry icecream.jpg' alt='Strawberry Ice Cream'>
+                        <button class="add-to-cart" onclick='addToCart("Strawberry Ice Cream", 80)'>Add to Cart</button>
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+
+        <!-- Cart Summary -->
+        <div id='cartSummary'>
+            <h2>My Cart</h2>
+            <ul id='cartItems'></ul>
+
+            <!-- Checkout Button -->
+            <button id='checkoutBtn' style='display: none;' onclick='proceedToCheckout()'>Proceed to Checkout</button>
+
+        </div>
+
+        <!-- Checkout Section -->
+        <div id='checkoutSection' style='display: none;'>
+            <h2>Checkout</h2>
+            <form id='checkoutForm' onsubmit='confirmOrder(event)'>
+                <div class='input-group'>
+                    <label for='name'>Name:</label>
+                    <input type='text' id='name' placeholder='Enter your name' required />
+                </div>
+
+                <div class='input-group'>
+                    <label for='address'>Address:</label>
+                    <input type='text' id='address' placeholder='Enter your address' required />
+                </div>
+
+                <p>Total Amount: $<span id='totalAmount'>0.00</span></p>
+
+                <button type='submit'>Confirm Order</button>
+
+            </form>
+
+        </div>
+
+        <!-- Order Successful Section -->
+        <div id='orderSuccessfulSection' style='display: none;'>
+            <h2>Order Successful!</h2>
+            <p>Your order has been placed successfully. Thank you for your purchase!</p>
+
+            <h3>Order Summary:</h3>
+            <ul id='orderSummaryItems'></ul>
+
+            <button onclick='printOrder()'>Print Order Summary</button>
+
+            <p id="order-number"></p>
+
+        </div>
+
+    </div>
+
+    <!-- Include JavaScript -->
+    <script src='script.js'></script>
+
+</body>
+</html>
